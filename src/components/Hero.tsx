@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Star } from "lucide-react";
-import heroImage from "@/assets/hero-room.jpg";
+// import heroImage from "@/assets/hero-room.jpg"; // Keeping comment or removing if unused. simpler to just use path string in img src
 import logo from "@/assets/prakrathi-logo.png";
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
+          src="/images/banner.png"
           alt="Prakrathi Residency Room"
           className="w-full h-full object-cover"
         />
@@ -77,7 +77,7 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-xl leading-relaxed"
           >
-            Welcome to Prakrathi Residency — where comfort meets convenience. 
+            Welcome to Prakrathi Residency — where comfort meets convenience.
             Strategically located in Bangalore's IT corridor with premium amenities for corporate, family, and transit guests.
           </motion.p>
 

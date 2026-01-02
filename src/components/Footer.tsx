@@ -35,8 +35,8 @@ const Footer = () => {
               whileHover={{ scale: 1.02 }}
             />
             <p className="text-primary-foreground/80 leading-relaxed mb-6 max-w-md">
-              Experience nature's tranquility at Prakrathi Residency. 
-              Strategically located in Bangalore's IT corridor, we offer 
+              Experience nature's tranquility at Prakrathi Residency.
+              Strategically located in Bangalore's IT corridor, we offer
               premium accommodations for corporate, family, and transit guests.
             </p>
             <div className="flex items-center gap-4">
@@ -96,11 +96,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:info@prakrathiresidency.com"
+                  href="mailto:info@prakrathiresidency.in"
                   className="flex items-start gap-3 text-primary-foreground/70 hover:text-gold transition-colors"
                 >
                   <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>info@prakrathiresidency.com</span>
+                  <span>info@prakrathiresidency.in</span>
                 </a>
               </li>
               <li className="flex items-start gap-3 text-primary-foreground/70">
@@ -122,7 +122,7 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
-            <p>© {currentYear} Prakrathi Residency. All rights reserved.</p>
+            <p>© {currentYear} Prakrathi Residency. All rights reserved. Built and Managed by Adhvyk Tech Solution - @SarveshAstraX</p>
             <div className="flex items-center gap-6">
               <span>Safe for Singles & Families</span>
               <span>•</span>

@@ -2,15 +2,13 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Wifi, Tv, Snowflake, Fan, Users, Bed, Phone } from "lucide-react";
-import roomDeluxeNonAC from "@/assets/room-deluxe-nonac.jpg";
-import roomDeluxeAC from "@/assets/room-deluxe-ac.jpg";
-import roomFamily from "@/assets/room-family.jpg";
+import { projectImages } from "@/data/images";
 
 const rooms = [
   {
     name: "Deluxe Non-AC",
     description: "Comfortable and affordable rooms with natural ventilation, perfect for budget-conscious travelers.",
-    image: roomDeluxeNonAC,
+    image: projectImages[0],
     features: [
       { icon: Fan, label: "Fan Cooled" },
       { icon: Wifi, label: "Free Wi-Fi" },
@@ -23,7 +21,7 @@ const rooms = [
   {
     name: "Deluxe AC",
     description: "Climate-controlled comfort with modern amenities for a refreshing stay.",
-    image: roomDeluxeAC,
+    image: projectImages.find(img => img.includes("29b00faf-83b6-4ad6-8e38-e1574ef9f1c6")) || projectImages[1],
     features: [
       { icon: Snowflake, label: "Air Conditioned" },
       { icon: Wifi, label: "Free Wi-Fi" },
@@ -36,7 +34,7 @@ const rooms = [
   {
     name: "Family Room",
     description: "Spacious accommodations designed for families with extra beds and ample living space.",
-    image: roomFamily,
+    image: projectImages.find(img => img.includes("fe45d968-a680-4dc7-bd7b-91aa4c8617ae")) || projectImages[2],
     features: [
       { icon: Users, label: "Family Sized" },
       { icon: Snowflake, label: "Air Conditioned" },
@@ -68,13 +66,12 @@ const RoomCard = ({ room, index }: { room: typeof rooms[0]; index: number }) => 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        
+
         {/* Category Badge */}
-        <div className={`absolute top-4 right-4 px-4 py-1.5 rounded-full text-xs font-semibold ${
-          room.category === "premium" 
-            ? "bg-accent text-accent-foreground" 
-            : "bg-secondary text-secondary-foreground"
-        }`}>
+        <div className={`absolute top-4 right-4 px-4 py-1.5 rounded-full text-xs font-semibold ${room.category === "premium"
+          ? "bg-accent text-accent-foreground"
+          : "bg-secondary text-secondary-foreground"
+          }`}>
           {room.price}
         </div>
       </div>
@@ -132,7 +129,7 @@ const Rooms = () => {
             Our Room Collection
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Choose from our carefully curated selection of rooms, each designed 
+            Choose from our carefully curated selection of rooms, each designed
             to provide comfort and convenience for every type of guest.
           </p>
         </motion.div>

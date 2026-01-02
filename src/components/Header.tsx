@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/prakrathi-logo.png";
+
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -37,11 +37,10 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-nature"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-nature"
+          : "bg-transparent"
+          }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
@@ -55,7 +54,7 @@ const Header = () => {
               className="flex items-center gap-3"
               whileHover={{ scale: 1.02 }}
             >
-              <img src={logo} alt="Prakrathi Residency" className="h-14 w-auto" />
+              <img src="/images/logo.png" alt="Prakrathi Residency" className="h-14 w-auto" />
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -68,9 +67,8 @@ const Header = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className={`text-sm font-medium transition-colors hover:text-accent ${
-                    isScrolled ? "text-foreground" : "text-foreground"
-                  }`}
+                  className={`text-sm font-medium transition-colors hover:text-accent ${isScrolled ? "text-foreground" : "text-foreground"
+                    }`}
                   whileHover={{ y: -2 }}
                 >
                   {link.label}

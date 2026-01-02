@@ -20,33 +20,55 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    toast({
-      title: "Inquiry Sent Successfully!",
-      description: "We'll get back to you within 24 hours.",
-    });
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        checkIn: "",
-        roomType: "",
-        message: "",
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
       });
-      setIsSubmitted(false);
-    }, 3000);
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Inquiry Sent Successfully!",
+          description: "We'll get back to you within 24 hours.",
+        });
+
+        // Reset form after 3 seconds
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            checkIn: "",
+            roomType: "",
+            message: "",
+          });
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        toast({
+          title: "Something went wrong.",
+          description: data.message || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Network Error",
+        description: "Please check your connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -70,8 +92,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "info@prakrathiresidency.com",
-      href: "mailto:info@prakrathiresidency.com",
+      value: "info@prakrathiresidency.in",
+      href: "mailto:info@prakrathiresidency.in",
     },
     {
       icon: MapPin,
@@ -101,7 +123,7 @@ const Contact = () => {
             Contact Us
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Have questions or ready to book? Reach out to us and our friendly 
+            Have questions or ready to book? Reach out to us and our friendly
             team will assist you promptly.
           </p>
         </motion.div>
@@ -134,6 +156,7 @@ const Contact = () => {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input type="hidden" name="access_key" value="1304ee25-c46b-4dc9-a093-6d30b599a331" />
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
@@ -292,7 +315,7 @@ const Contact = () => {
             {/* Google Map */}
             <div className="bg-card rounded-2xl overflow-hidden shadow-nature border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.0379098745087!2d77.64089717454858!3d12.89175371662825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae150e748f34c1%3A0x4f5e2b97a9af9f12!2sSingasandra%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1704290000000!5m2!1sen!2sin"
+                src="https://maps.google.com/maps?q=Prakrathi%20Residency%2C%20Singasandra%2C%20Bangalore&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
@@ -313,7 +336,7 @@ const Contact = () => {
                 Call Now
               </a>
               <a
-                href="https://maps.app.goo.gl/Y9Lxix3kRNWB6YAm9"
+                href="https://maps.app.goo.gl/bTsVESBactNt4ywT9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 bg-accent hover:bg-gold-light text-accent-foreground py-4 rounded-xl font-semibold transition-colors"
