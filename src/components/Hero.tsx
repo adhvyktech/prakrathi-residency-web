@@ -82,17 +82,20 @@ const Hero = () => {
           </motion.p>
 
           {/* Location */}
-          <motion.div
+          <motion.a
+            href="https://maps.app.goo.gl/bTsVESBactNt4ywT9"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex items-start gap-3 mb-8"
+            className="flex items-start gap-3 mb-8 hover:opacity-80 transition-opacity"
           >
             <MapPin className="w-5 h-5 text-gold mt-1 flex-shrink-0" />
             <p className="text-primary-foreground/80 text-sm">
-              MMR Building, 1st Main Road, AECS 'B' Block, Singasandra, Bangalore - 560068
+              855E, 2nd Main Road, AECS Layout, B-block, Singasandra, Bangalore- 560068
             </p>
-          </motion.div>
+          </motion.a>
 
           {/* CTA Buttons */}
           <motion.div

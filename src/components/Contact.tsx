@@ -98,7 +98,8 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Address",
-      value: "MMR Building, 1st Main Road, AECS 'B' Block, Singasandra, Bangalore - 560068",
+      value: "855E, 2nd Main Road, AECS Layout, B-block, Singasandra, Bangalore- 560068",
+      href: "https://maps.app.goo.gl/bTsVESBactNt4ywT9",
     },
     {
       icon: Clock,

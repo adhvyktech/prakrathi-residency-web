@@ -103,15 +103,22 @@ const Footer = () => {
                   <span>info@prakrathiresidency.in</span>
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-primary-foreground/70">
-                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <span>
-                  MMR Building, 1st Main Road,
-                  <br />
-                  AECS 'B' Block, Singasandra,
-                  <br />
-                  Bangalore - 560068
-                </span>
+              <li>
+                <a
+                  href="https://maps.app.goo.gl/bTsVESBactNt4ywT9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-primary-foreground/70 hover:text-gold transition-colors"
+                >
+                  <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                  <span>
+                    855E, 2nd Main Road, AECS Layout,
+                    <br />
+                    B-block, Singasandra,
+                    <br />
+                    Bangalore- 560068
+                  </span>
+                </a>
               </li>
             </ul>
           </div>
@@ -131,7 +138,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 
