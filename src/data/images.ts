@@ -13,7 +13,7 @@ export const projectImages = [
     "/images/89239423-cd26-4cd4-9e9e-5b660585f62e.png",
     "/images/9144a877-7c96-404e-a89b-e004e44968a2.png",
     "/images/9404f4b6-e734-4ea4-b040-3f93fad95036.png",
-    "/images/969f2e82-f531-4aa6-9959-b0f85e3f5def.png",
+
     "/images/b1885e4f-2749-4a3b-be78-dd4050dc9fe3.png",
     "/images/b205459a-e9a5-4863-aa6d-93b404cad31b.png",
     "/images/b575a914-fd43-4a41-8e09-54e45c78da2b.png",
